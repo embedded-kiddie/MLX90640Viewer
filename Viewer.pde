@@ -253,20 +253,20 @@ public class Viewer {
     Read(frameNo);  // Read frame into src[]
     background(0);
 
-    maxTmp = -999.0f;
-    minTmp = +999.0f;
 
     if (autoRange) {
-      // For each floating point value, double check that we've acquired a number,
-      // then determine the min and max temperature values for this frame
+      maxTmp = -999.0f;
+      minTmp = +999.0f;
+
       for (int i = 0; i < MLX90640_SIZE; i++) {
-        if (Float.isNaN(src[i])) continue;
+        if (Float.isNaN(src[i])) continue; // Skip error pixel
         if (src[i] > maxTmp) {
           maxTmp = src[i];
         } else if (src[i] < minTmp) {
           minTmp = src[i];
         }
       }
+
       maxTmp = floor(maxTmp);
       minTmp = floor(minTmp);
     } else {

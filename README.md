@@ -1,2 +1,2 @@
 # MLX90640Viewer
-MLX90640 Raw Filer Viewer
+MLX90640 Raw File Viewer

@@ -8,37 +8,37 @@ import java.io.*;   // RandomAccessFile
 import java.nio.*;  // ByteBuffer, ByteOrder
 
 // MLX90640 device resolution
-int MLX90640_COLS = 32;
-int MLX90640_ROWS = 24;
-int MLX90640_SIZE  = (MLX90640_COLS * MLX90640_ROWS);
-int MLX90640_FRAME = (MLX90640_COLS * MLX90640_ROWS * 4);
+final int MLX90640_COLS = 32;
+final int MLX90640_ROWS = 24;
+final int MLX90640_SIZE  = (MLX90640_COLS * MLX90640_ROWS);
+final int MLX90640_FRAME = (MLX90640_COLS * MLX90640_ROWS * 4);
 
 // Interpolation: false
-int DISPLAY_SCALE = 15;  // Box size
-int DISPLAY_FILTER = 7;  // Gaussian filter size (0: none)
-int DISPLAY_COLS = (MLX90640_COLS * DISPLAY_SCALE);
-int DISPLAY_ROWS = (MLX90640_ROWS * DISPLAY_SCALE);
+final int DISPLAY_SCALE = 15;  // Box size
+final int DISPLAY_FILTER = 7;  // Gaussian filter size (0: none)
+final int DISPLAY_COLS = (MLX90640_COLS * DISPLAY_SCALE);
+final int DISPLAY_ROWS = (MLX90640_ROWS * DISPLAY_SCALE);
 
 // Interpolation: true
-int INTERPOLATE_BOX = 1;
-int INTERPOLATE_SCALE = DISPLAY_SCALE;
-int INTERPOLATED_COLS = (MLX90640_COLS * INTERPOLATE_SCALE);
-int INTERPOLATED_ROWS = (MLX90640_ROWS * INTERPOLATE_SCALE);
-int INTERPOLATED_SIZE = (INTERPOLATED_COLS * INTERPOLATED_ROWS);
+final int INTERPOLATE_BOX = 1;
+final int INTERPOLATE_SCALE = DISPLAY_SCALE;
+final int INTERPOLATED_COLS = (MLX90640_COLS * INTERPOLATE_SCALE);
+final int INTERPOLATED_ROWS = (MLX90640_ROWS * INTERPOLATE_SCALE);
+final int INTERPOLATED_SIZE = (INTERPOLATED_COLS * INTERPOLATED_ROWS);
 
 /*--------------------------------------------------------------------------------
  * Heatmap: Inferno
  * https://matplotlib.org/stable/users/explain/colors/colormaps.html
  *--------------------------------------------------------------------------------*/
-int N_POINTS = 25;
-int N_GRADATION = 1024;
-float calcR(float x) { float y = -0.0186f * pow(x, 3.0f) + 0.3123f * pow(x, 2.0f) + 11.9230f * x + 36.6580f; return constrain(y, 0.0f, 255.0f); }
-float calcG(float x) { float y =  0.0042f * pow(x, 3.0f) + 0.2183f * pow(x, 2.0f) +  1.0843f * x +  8.0676f; return constrain(y, 0.0f, 255.0f); }
-float calcB(float x) { float y =  0.0743f * pow(x, 3.0f) - 2.7407f * pow(x, 2.0f) + 23.1360f * x + 61.5370f; return constrain(y, 0.0f, 255.0f); }
+final int N_POINTS = 25;
+final int N_GRADATION = 1024;
+static float calcR(float x) { float y = -0.0186f * pow(x, 3.0f) + 0.3123f * pow(x, 2.0f) + 11.9230f * x + 36.6580f; return constrain(y, 0.0f, 255.0f); }
+static float calcG(float x) { float y =  0.0042f * pow(x, 3.0f) + 0.2183f * pow(x, 2.0f) +  1.0843f * x +  8.0676f; return constrain(y, 0.0f, 255.0f); }
+static float calcB(float x) { float y =  0.0743f * pow(x, 3.0f) - 2.7407f * pow(x, 2.0f) + 23.1360f * x + 61.5370f; return constrain(y, 0.0f, 255.0f); }
 
 // Default range of temperature
-int MINTEMP = 20;  // Low  temperature range
-int MAXTEMP = 35;  // High temperature range
+final int MINTEMP = 20;  // Low  temperature range
+final int MAXTEMP = 35;  // High temperature range
 
 public class HeatMap {
   public float[] r = new float[N_GRADATION];

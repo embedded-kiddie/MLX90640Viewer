@@ -176,7 +176,11 @@ public class Viewer {
     // Create file reader object
     try {
       // https://zawaworks.hatenablog.com/entry/2017/10/08/213602
-      reader = new RandomAccessFile(sketchPath() + "/" + filename, "r");
+      File file = new File(filename);
+      if (!file.isAbsolute()) {
+        filename = sketchPath(filename);
+      }
+      reader = new RandomAccessFile(filename, "r");
       frameCount = reader.length() / MLX90640_FRAME;
       frameNo = 0;
       println("frameCount: " + frameCount);

@@ -29,7 +29,7 @@ void draw() {
 ### `Viewer` class methods
 
 - **`Viewer::Viewer(String file_path)`**  
-    In the constructor of the `Viewer` class, specify the path of the file to be played.
+    In the constructor of the `Viewer` class, specify the path of the file to be played. Specify the file name with an absolute path or a relative path from the sketch folder where `Viewer.pde` is located.
 
 - **`void SetAutoRange(boolean autoRange)`**  
     Specify `true` to automatically follow the temperature range to be rendered. If `false`, it will be set to 20°C to 35°C.

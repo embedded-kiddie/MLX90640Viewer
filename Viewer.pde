@@ -260,7 +260,6 @@ public class Viewer {
     Read(frameNo);  // Read frame into src[]
     background(0);
 
-
     if (autoRange) {
       maxTmp = -999.0f;
       minTmp = +999.0f;
@@ -320,6 +319,7 @@ public class Viewer {
     }
 
     // Draw heatmap color bar
+    // Note: It needs drawing every cycle since the filter is applied to the entire screen.
     image(colorBar, 0, 360);
 
     // Draw legend

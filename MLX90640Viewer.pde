@@ -4,11 +4,11 @@
  * Released under the MIT license
  * https://opensource.org/license/mit
  *================================================================================*/
-Viewer viewer;
-int counter = 0;
-
 // MLX90640 raw file
 String file = "./data/mlx0100.raw";
+
+Viewer viewer;
+int counter = 0;
 
 void setup() {
   size(480, 420);

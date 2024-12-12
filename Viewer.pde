@@ -137,8 +137,8 @@ public class Interpolate {
 public class Viewer {
   private boolean autoRange = false;
   private boolean interpolation = true;
-  private float minTmp = +999.0f;
-  private float maxTmp = -999.0f;
+  private float minTmp = MINTEMP;
+  private float maxTmp = MAXTEMP;
   private int filterSize = DISPLAY_FILTER;
 
   private HeatMap heatmap = null;
@@ -191,8 +191,11 @@ public class Viewer {
     }
   }
 
-  public void SetRange(boolean _autoRange) {
-    autoRange = _autoRange;
+  public void SetAutoRange(boolean _autoRange) {
+    if (!(autoRange = _autoRange)) {
+      minTmp = MINTEMP;
+      maxTmp = MAXTEMP;
+    }
   }
   public void SetRange(int _minTmp, int _maxTmp) {
     minTmp = _minTmp;
@@ -207,7 +210,7 @@ public class Viewer {
     filterSize = _filterSize;
   }
 
-  public void Read(long n) {
+  private void Read(long n) {
     try {
       reader.seek(n * MLX90640_FRAME);
       
@@ -269,9 +272,6 @@ public class Viewer {
 
       maxTmp = floor(maxTmp);
       minTmp = floor(minTmp);
-    } else {
-      maxTmp = MAXTEMP;
-      minTmp = MINTEMP;
     }
 
     float [] img = src;

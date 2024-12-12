@@ -57,7 +57,7 @@ void draw() {
 
 ## Demo
 
-[![MLX90640 raw data viewer](MLX90640-Viewer.jpg)](https://youtu.be/cnu-uDajqBA "MLX90640 raw data viewer using Processing - YouTube")
+[![MLX90640 raw data viewer](MLX90640-Viewer.jpg)](https://youtu.be/dhfZa0TYN0s "MLX90640 raw data viewer using Processing - YouTube")
 
 [1]: https://www.melexis.com/en/product/mlx90640/far-infrared-thermal-sensor-array "Far Infrared Thermal Sensor Array (32x24 RES) ｜ Melexis"
 

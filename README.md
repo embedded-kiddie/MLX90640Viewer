@@ -73,4 +73,4 @@ The heatmap was calculated by sampling "Inferno" from the [Matplotlib][5] and us
 
 [4]: https://en.wikipedia.org/wiki/Gaussian_blur "Gaussian blur - Wikipedia"
 
-[5]: view-source:https://matplotlib.org/stable/users/explain/colors/colormaps.html "Choosing Colormaps in Matplotlib &#8212; Matplotlib 3.9.3 documentation"
+[5]: https://matplotlib.org/stable/users/explain/colors/colormaps.html "Choosing Colormaps in Matplotlib &#8212; Matplotlib 3.9.3 documentation"

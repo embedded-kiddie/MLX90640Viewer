@@ -57,7 +57,7 @@ void draw() {
 
 ## Rendering heatmap
 
-The heatmap was calculated by sampling "Inferno" from the [Matplotlib][5] and using polynomial approximation on the created RGB graph.
+The heatmap was calculated by sampling the RGB values ​​of the colormap "Inferno" from [Matplotlib][5] and then polynomial approximating the RGB from the graph created.
 
 ![Inferno](Inferno.png "RGB graph of color map Inferno")
 

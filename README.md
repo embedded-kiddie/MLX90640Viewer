@@ -55,6 +55,12 @@ void draw() {
 - **`boolean Prev()`**  
     Rewinds the thermal image to the previous frame, returning `false` if executed beyond the first frame.
 
+## Rendering heatmap
+
+The heatmap was calculated by sampling "Inferno" from the [Matplotlib][5] and using polynomial approximation on the created RGB graph.
+
+![Inferno](Inferno.png "RGB graph of color map Inferno")
+
 ## Demo
 
 [![MLX90640 raw data viewer](MLX90640-Viewer.jpg)](https://youtu.be/dhfZa0TYN0s "MLX90640 raw data viewer using Processing - YouTube")
@@ -66,3 +72,5 @@ void draw() {
 [3]: https://en.wikipedia.org/wiki/Bilinear_interpolation "Bilinear interpolation - Wikipedia"
 
 [4]: https://en.wikipedia.org/wiki/Gaussian_blur "Gaussian blur - Wikipedia"
+
+[5]: view-source:https://matplotlib.org/stable/users/explain/colors/colormaps.html "Choosing Colormaps in Matplotlib &#8212; Matplotlib 3.9.3 documentation"

@@ -59,11 +59,11 @@ void draw() {
 
 The heatmap was calculated by sampling the RGB values ​​of the colormap "Inferno" from [Matplotlib][5] and then polynomial approximating the RGB from the graph created.
 
-![Inferno](Inferno.png "RGB graph of color map Inferno")
+![RGB graph of color map Inferno](images/RGB-Graph-Inferno.png "RGB graph of color map Inferno")
 
 ## Demo
 
-[![MLX90640 raw data viewer](MLX90640-Viewer.jpg)](https://youtu.be/dhfZa0TYN0s "MLX90640 raw data viewer using Processing - YouTube")
+[![MLX90640 raw data viewer](images/MLX90640Viewer.jpg)](https://youtu.be/dhfZa0TYN0s "MLX90640 raw data viewer using Processing - YouTube")
 
 [1]: https://www.melexis.com/en/product/mlx90640/far-infrared-thermal-sensor-array "Far Infrared Thermal Sensor Array (32x24 RES) ｜ Melexis"
 
